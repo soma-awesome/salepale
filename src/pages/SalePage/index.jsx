@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
 export function SalePage() {
-    return (
-        <div>
-            <p style={{color: "red"}}>sale sale</p>
-        </div>
-    )
+  return (
+    <div>
+      <p style={{ color: "red" }}>sale sale</p>
+    </div>
+  );
 }
