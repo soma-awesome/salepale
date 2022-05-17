@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import { Link } from 'react-router-dom';
 import './App.css';
-
+import { CustomButton } from './components/CustomButton';
+function handleButton(route) {
+  document.location.href(route)
+}
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Link to={'sale'}>
+        <CustomButton 
+          message={"살래"}
+          color={"red"}
+          onClick={() => handleButton('/pale')}
+          isSale={true}
+        />
+      </Link>
+      <Link to='/pale'>
+        <CustomButton
+          message={"팔래"}
+          color={"blue"} 
+          onClick={() => handleButton('/sale')}
+        />
+      </Link>
+
     </div>
   );
 }

@@ -1,0 +1,28 @@
+button {
+    background-color: red;
+    width: 45vw;
+    height: 50vw;
+}
+
+img {
+    width: 30vw;
+    height: 30vw;
+}
+
+p {
+    font-size: xx-large;
+    color: white;
+}
+div {
+    display: inline;
+}
+
+@media (max-width: 500px) {
+    button {
+        width: 90vw;
+        height: 90vw;
+    }
+    div {
+        display: block;
+    }
+}
