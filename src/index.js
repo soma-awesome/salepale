@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { SalePage, PalePage } from "./pages";
+import { PalePage } from "./pages";
+import { SaleMainPage, SaleDetailPage } from "./pages/Sale";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -11,7 +12,8 @@ root.render(
     <React.StrictMode>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/sale" element={<SalePage />} />
+        <Route path="/sale" element={<SaleMainPage />} />
+        <Route path="/sale/detail" element={<SaleDetailPage />} />
         <Route path="/pale" element={<PalePage />} />
       </Routes>
     </React.StrictMode>

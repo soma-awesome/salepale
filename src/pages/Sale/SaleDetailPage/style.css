@@ -1,0 +1,27 @@
+.sale-detail-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.sale-detail-words-container {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sale-detail-words-title {
+  font-size: xx-large;
+  font-weight: 600;
+  color: "#EEEEEE";
+  margin-right: 10%;
+}
+
+.sale-detail-words-des {
+  font-size: large;
+  font-weight: 400;
+  color: "#EEEEEE";
+  margin-right: 10%;
+}
