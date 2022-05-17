@@ -1,2 +1,2 @@
-export * from './SalePage'
-export * from './PalePage'
+export * from "./SalePage";
+export * from "./PalePage";
