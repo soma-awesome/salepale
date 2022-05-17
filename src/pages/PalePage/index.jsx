@@ -4,7 +4,7 @@ import TrText from "../../shapes/TrText";
 import TrImage from "../../shapes/TrImage";
 import { Stage, Layer } from "react-konva";
 import { useState, useEffect } from "react";
-// import useImage from "use-image";
+import { EditorSt } from "../../shapes/EditableText";
 
 export function PalePage() {
   const [objects, setObjects] = useState([]);
@@ -40,7 +40,6 @@ export function PalePage() {
     } else if (targetName === "text") {
       newObjects.push({
         name: "text",
-        text: "텍스트",
         x: x,
         y: y,
         fontSize: 40,
@@ -64,6 +63,7 @@ export function PalePage() {
 
     var URL = window.webkitURL || window.URL;
     var url = URL.createObjectURL(e.target.files[0]);
+
     var img = new Image();
     img.src = url;
 
@@ -74,6 +74,8 @@ export function PalePage() {
       image: img,
       id: "mimage" + objects.length.toString(),
     });
+
+    setObjects(newObjects);
   };
 
   const checkDeselect = (e) => {
