@@ -1,7 +1,10 @@
 import { Text, Transformer } from "react-konva";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
+import { TextEditor } from "./TextEditor";
 
 const TrText = ({ shapeProps, isSelected, onSelect, onChange }) => {
+  const [text, setText] = useState("텍스트");
+  const [editorEnabled, setEditorEnabled] = useState(false);
   const shapeRef = useRef();
   const trRef = useRef();
 
@@ -19,6 +22,7 @@ const TrText = ({ shapeProps, isSelected, onSelect, onChange }) => {
         onTap={onSelect}
         ref={shapeRef}
         {...shapeProps}
+        text={text}
         draggable
         onDragEnd={(e) => {
           onChange({
@@ -42,6 +46,10 @@ const TrText = ({ shapeProps, isSelected, onSelect, onChange }) => {
             height: node.height() * scaleY,
           });
         }}
+        onDblClick={() => {
+          setEditorEnabled(true);
+        }}
+        visible={!editorEnabled}
       />
       {isSelected && (
         <Transformer
@@ -59,6 +67,16 @@ const TrText = ({ shapeProps, isSelected, onSelect, onChange }) => {
             "bottom-left",
             "bottom-right",
           ]}
+        />
+      )}
+      {editorEnabled && (
+        <TextEditor
+          value={text}
+          textNodeRef={shapeRef}
+          onChange={setText}
+          onBlur={() => {
+            setEditorEnabled(false);
+          }}
         />
       )}
     </>
